@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:819897613202:android:86f864e13a12646a075f4b",
+        "mobilesdk_app_id": "1:819897613202:android:ee2c4589cee073ce075f4b",
         "android_client_info": {
-          "package_name": "com.foodify"
+          "package_name": "com.myfoodify"
         }
       },
       "oauth_client": [

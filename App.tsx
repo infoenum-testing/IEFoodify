@@ -14,6 +14,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import WelcomeScreen from "./PreLogin/WelcomeScreen"
 import LoginScreen from "./PreLogin/LoginScreen"
+import SplashScreen from 'react-native-splash-screen';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,7 @@ function App() {
   const [initialRoute, setInitialRoute] = useState(null);
 
     useEffect(() => {
+      SplashScreen.hide()
     const checkStatus = async () => {
       // const onboarding = await AsyncStorage.getItem('completeOnboarding');
       // const login = await AsyncStorage.getItem('isLogin');

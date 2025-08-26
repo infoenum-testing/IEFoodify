@@ -14,7 +14,6 @@ Platform,
 Image
 } from 'react-native';
 
-
 const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

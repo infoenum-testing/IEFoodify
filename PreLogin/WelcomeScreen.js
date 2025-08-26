@@ -6,7 +6,7 @@ const { width } = Dimensions.get('window');
 const WelcomeScreen = ({ navigation }) => {
   return (
     <ImageBackground
-      source={require('../Assets/Images/wellComeIcon.png')}
+      source={require('../Assets/Images/PreLogin/welcomeIcon.png')}
       style={styles.backgroundImage}
       resizeMode='stretch'
     >
@@ -15,7 +15,7 @@ const WelcomeScreen = ({ navigation }) => {
         <Text style={styles.subtitle}>
           The best delivery app in town for{"\n"}delivering your daily fresh groceries
         </Text>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Login')}>
           <Text style={styles.buttonText}>Shop now</Text>
         </TouchableOpacity>
       </View>
@@ -27,8 +27,6 @@ const styles = StyleSheet.create({
   
   backgroundImage: {
     flex: 1,
-    // width: '100%',
-    // height: '100%',
   },
   containerOverlay: {
     flex: 1,

@@ -13,6 +13,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import WelcomeScreen from "./PreLogin/WelcomeScreen"
+import LoginScreen from "./PreLogin/LoginScreen"
 
 const Stack = createNativeStackNavigator();
 
@@ -47,6 +48,8 @@ function App() {
         <NavigationContainer>
           <Stack.Navigator initialRouteName={"Welcome"}>
             <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ title: 'WELCOME', headerBackVisible: false }} />
+            <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaProvider>

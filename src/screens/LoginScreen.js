@@ -84,7 +84,7 @@ const LoginScreen = ({ navigation }) => {
                 </TouchableOpacity>
             </View>
 
-            <Text style={styles.orText}>OR</Text>
+            <Text style={styles.orText}> --------- OR --------</Text>
 
             {/* Google Sign-In */}
             <GoogleSigninButton

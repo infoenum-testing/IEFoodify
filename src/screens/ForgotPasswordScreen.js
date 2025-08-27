@@ -6,7 +6,8 @@ import {
     Platform,
     ScrollView,
 } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 import Input from '../components/Input';
 import Button from '../components/Button';
 import { validateEmail } from '../utils/validations';
@@ -26,38 +27,37 @@ const ForgotPasswordScreen = ({ navigation }) => {
     };
 
     return (
-        <SafeAreaProvider style={styles.container}>
-            <KeyboardAvoidingView
-                behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-                style={{ flex: 1 }}
-            >
-                <ScrollView
-                    contentContainerStyle={styles.scrollContainer}
-                    keyboardShouldPersistTaps="handled"
-                    showsVerticalScrollIndicator={false}
-                >
-                    <Text style={styles.title}>Forgot Password</Text>
-                    <Text style={styles.subtitle}>
-                        Enter your email to receive a password reset link
-                    </Text>
+      <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
+    <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        style={{ flex: 1 }}
+    >
+        <ScrollView
+            contentContainerStyle={styles.scrollContainer}
+            keyboardShouldPersistTaps="handled"
+            showsVerticalScrollIndicator={false}
+        >
+            <Text style={styles.title}>Forgot Password</Text>
+            <Text style={styles.subtitle}>
+                Enter your email to receive a password reset link
+            </Text>
 
-                    {/* ✅ Reusable Input */}
-                    <Input
-                        label="Email"
-                        value={email}
-                        onChangeText={(text) => {
-                            setEmail(text);
-                            if (emailError) setEmailError('');
-                        }}
-                        keyboardType="email-address"
-                        error={emailError}
-                    />
+            <Input
+                label="Email"
+                value={email}
+                onChangeText={(text) => {
+                    setEmail(text);
+                    if (emailError) setEmailError('');
+                }}
+                keyboardType="email-address"
+                error={emailError}
+            />
 
-                    {/* ✅ Reusable Button */}
-                    <Button title="Send Reset Link" onPress={handleSubmit} />
-                </ScrollView>
-            </KeyboardAvoidingView>
-        </SafeAreaProvider>
+            <Button title="Send Reset Link" onPress={handleSubmit} />
+        </ScrollView>
+    </KeyboardAvoidingView>
+</SafeAreaView>
+
     );
 };
 
@@ -70,15 +70,15 @@ const styles = StyleSheet.create({
     },
     scrollContainer: {
         flexGrow: 1,
-        justifyContent: 'center',
+        //justifyContent: 'center',
         padding: 20,
     },
     title: {
         fontSize: 28,
         fontWeight: '700',
         alignSelf: 'center',
-        marginBottom: 8,
-        color: '#222',
+        marginBottom: 20,
+        color: '#2382AA',
     },
     subtitle: {
         fontSize: 15,

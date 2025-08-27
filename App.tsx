@@ -59,9 +59,9 @@ function App() {
           <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ title: 'WELCOME', headerBackVisible: false }} />
           <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Signup" component={SignupScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
-          <Stack.Screen name="OtpScreen" component={OtpScreen} />
-          <Stack.Screen name="ResetPassword" component={ResetPassword} />
+          <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen}  options={{ title: '', }} />
+          <Stack.Screen name="OtpScreen" component={OtpScreen}  options={{ title: '', }} />
+          <Stack.Screen name="ResetPassword" component={ResetPassword }  options={{ title: '', }} />
           <Stack.Screen name="Home" component={HomeScreen} />
 
         </Stack.Navigator>

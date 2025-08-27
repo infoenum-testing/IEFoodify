@@ -5,11 +5,13 @@ const { width } = Dimensions.get('window');
 
 const WelcomeScreen = ({ navigation }) => {
   return (
-    <ImageBackground
-      source={require('../Assets/Images/PreLogin/welcomeIcon.png')}
-      style={styles.backgroundImage}
-      resizeMode='stretch'
-    >
+  <ImageBackground
+  source={require('../../Assets/Images/PreLogin/welcomeIcon.png')}
+  style={styles.backgroundImage}
+  resizeMode="stretch"
+>
+
+
       <View style={styles.containerOverlay}>
         <Text style={styles.title}>Get your groceries{"\n"}delivered to your home</Text>
         <Text style={styles.subtitle}>

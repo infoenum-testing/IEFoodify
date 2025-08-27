@@ -3,15 +3,16 @@ import {
   View,
   Text,
   TextInput,
-  TouchableOpacity,
   StyleSheet,
   KeyboardAvoidingView,
   Platform,
+  TouchableOpacity,
 } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Button from '../components/Button';
 
 const OtpScreen = ({ navigation }) => {
-  const length = 6; // change to 4 if you want
+  const length = 6; // change to 4 if needed
   const [otp, setOtp] = useState(new Array(length).fill(''));
   const inputs = useRef([]);
 
@@ -41,7 +42,7 @@ const OtpScreen = ({ navigation }) => {
     }
     // 🔑 Verify OTP logic (API / Firebase etc.)
     alert(`OTP Verified: ${enteredOtp}`);
-    navigation.navigate('ResetPassword'); // or wherever you want to go
+    navigation.navigate('ResetPassword'); // Next screen
   };
 
   const handleResend = () => {
@@ -58,7 +59,7 @@ const OtpScreen = ({ navigation }) => {
         <View style={styles.content}>
           <Text style={styles.title}>Verify OTP</Text>
           <Text style={styles.subtitle}>
-            Enter the 6-digit code sent to your email
+            Enter the {length}-digit code sent to your email
           </Text>
 
           {/* OTP Inputs */}
@@ -77,10 +78,8 @@ const OtpScreen = ({ navigation }) => {
             ))}
           </View>
 
-          {/* Verify Button */}
-          <TouchableOpacity style={styles.verifyButton} onPress={handleVerify}>
-            <Text style={styles.verifyButtonText}>Verify</Text>
-          </TouchableOpacity>
+          {/* ✅ Reusable Button */}
+          <Button title="Verify" onPress={handleVerify} />
 
           {/* Resend OTP */}
           <TouchableOpacity onPress={handleResend} style={styles.resendContainer}>
@@ -92,6 +91,8 @@ const OtpScreen = ({ navigation }) => {
     </SafeAreaProvider>
   );
 };
+
+export default OtpScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -134,22 +135,6 @@ const styles = StyleSheet.create({
     color: '#222',
     backgroundColor: '#f9f9f9',
   },
-  verifyButton: {
-    backgroundColor: '#22789E',
-    paddingVertical: 16,
-    borderRadius: 12,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15,
-    shadowRadius: 4,
-    elevation: 3,
-  },
-  verifyButtonText: {
-    color: '#fff',
-    fontSize: 18,
-    fontWeight: '600',
-  },
   resendContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -165,5 +150,3 @@ const styles = StyleSheet.create({
     color: '#22789E',
   },
 });
-
-export default OtpScreen;

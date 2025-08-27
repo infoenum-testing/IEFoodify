@@ -30,7 +30,7 @@ const LoginScreen = ({ navigation }) => {
 
         setErrors(newErrors);
         if (!valid) return;
-        navigation.navigate('Home');
+        navigation.navigate('HomeTab');
 
         // 👉 API login call here
     };
@@ -87,23 +87,24 @@ const LoginScreen = ({ navigation }) => {
             <Text style={styles.orText}> --------- OR --------</Text>
 
             {/* Google Sign-In */}
-            <GoogleSigninButton
-                style={styles.socialButton}
-                size={GoogleSigninButton.Size.Wide}
-                color={GoogleSigninButton.Color.Dark}
-                onPress={() => { }}
-            />
+        <GoogleSigninButton
+    style={[styles.socialButton, { marginVertical: 8, borderRadius: 10, height: 50 }]}
+    size={GoogleSigninButton.Size.Wide}
+    color={GoogleSigninButton.Color.Dark}
+    onPress={() => { }}
+/>
 
-            {/* Apple Sign-In */}
-            {Platform.OS === 'ios' && (
-                <AppleButton
-                    style={styles.socialButton}
-                    cornerRadius={5}
-                    buttonStyle={AppleButton.Style.BLACK}
-                    buttonType={AppleButton.Type.SIGN_IN}
-                    onPress={() => { }}
-                />
-            )}
+{/* Apple Sign-In */}
+{Platform.OS === 'ios' && (
+    <AppleButton
+        style={[styles.socialButton, { marginVertical: 8, borderRadius: 10, height: 50 }]}
+        cornerRadius={10}
+        buttonStyle={AppleButton.Style.BLACK}
+        buttonType={AppleButton.Type.SIGN_IN}
+        onPress={() => { }}
+    />
+)}
+
         </SafeAreaProvider>
     );
 };

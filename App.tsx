@@ -14,6 +14,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import WelcomeScreen from "./PreLogin/WelcomeScreen"
 import LoginScreen from "./PreLogin/LoginScreen"
+import OtpScreen from "./PreLogin/OtpScreen"
+import ResetPassword from "./PreLogin/ResetPasswordScreen"
+import ForgotPasswordScreen from './PreLogin/ForgotPasswordScreen';
 import SplashScreen from 'react-native-splash-screen';
 
 const Stack = createNativeStackNavigator();
@@ -29,7 +32,7 @@ function App() {
       // const login = await AsyncStorage.getItem('isLogin');
 
       // if (!onboarding || onboarding !== 'true') {
-        // setInitialRoute('Welcome')
+      // setInitialRoute('Welcome')
       // } else if (!login || login !== 'true') {
       //   setInitialRoute('Login')
       // } else {
@@ -46,15 +49,17 @@ function App() {
 
 
   return (
-      <SafeAreaProvider>
-        <NavigationContainer>
-          <Stack.Navigator initialRouteName={"Welcome"}>
-            <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ title: 'WELCOME', headerBackVisible: false }} />
-            <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
-
-          </Stack.Navigator>
-        </NavigationContainer>
-      </SafeAreaProvider>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName={"Welcome"}>
+          <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ title: 'WELCOME', headerBackVisible: false }} />
+          <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
+          <Stack.Screen name="OtpScreen" component={OtpScreen} />
+          <Stack.Screen name="ResetPassword" component={ResetPassword} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
 

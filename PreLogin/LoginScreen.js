@@ -86,7 +86,7 @@ return (
                     onPress={() => setSecureText(!secureText)}
                 >
                     <Image
-                        source={secureText ? require('../Assets/Images/PreLogin/eye.slash.png') : require('../Assets/Images/PreLogin/eye.fill.png')}
+                        source={secureText ? require('../Assets/Images/eye.slash.png') : require('../Assets/Images/eye.fill.png')}
                         resizeMode="contain"
                         style={{ width: 22, height: 22, tintColor: '#888' }}
                     />
@@ -98,7 +98,7 @@ return (
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.signUpButton}
-                onPress={() => navigation.navigate('SignUp')}
+                onPress={() => navigation.navigate('Signup')}
             >
                 <Text style={styles.signUpText}>Don't have an account? Sign Up</Text>
             </TouchableOpacity>

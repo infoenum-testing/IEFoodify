@@ -15,6 +15,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import WelcomeScreen from "./PreLogin/WelcomeScreen"
 import LoginScreen from "./PreLogin/LoginScreen"
 import SplashScreen from 'react-native-splash-screen';
+import SignupScreen from './src/screens/Auth/SignupScreen';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -51,6 +53,7 @@ function App() {
           <Stack.Navigator initialRouteName={"Welcome"}>
             <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ title: 'WELCOME', headerBackVisible: false }} />
             <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+           <Stack.Screen name="Signup" component={SignupScreen} options={{ headerShown: false }} />
 
           </Stack.Navigator>
         </NavigationContainer>

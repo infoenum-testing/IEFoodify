@@ -65,24 +65,28 @@ const SignupScreen = ({ navigation }) => {
           keyboardType="phone-pad"
           error={errors.mobile}
         />
+
+        {/* 👇 Password input with eye toggle */}
         <Input
           label="Password"
           value={password}
           onChangeText={setPassword}
-          secureTextEntry
+          isPassword
           error={errors.password}
         />
+
+        {/* 👇 Confirm Password input with eye toggle */}
         <Input
           label="Confirm Password"
           value={confirmPassword}
           onChangeText={setConfirmPassword}
-          secureTextEntry
+          isPassword
           error={errors.confirm}
         />
 
         <Button title="Sign Up" onPress={onSignup} />
 
-        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <Text style={styles.loginText}>
             Already have an account? <Text style={styles.link}>Log in</Text>
           </Text>
@@ -104,16 +108,17 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 26,
     fontWeight: '700',
+    color: '#2382AA',
     textAlign: 'center',
     marginBottom: 30
   },
   loginText: {
     marginTop: 20,
     textAlign: 'center',
-    color: '#333'
+    color: 'black'
   },
   link: {
-    color: '#007bff',
+    color: '#2382AA',
     fontWeight: '600'
   }
 });

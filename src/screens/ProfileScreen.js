@@ -1,52 +1,137 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image, Button } from 'react-native';
+import React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+  Alert,
+} from "react-native";
+import { useSelector } from "react-redux";
 
-const ProfileScreen = ({ navigation }) => {
-  const handleEditProfile = () => {
-    alert("Edit Profile Clicked!");
+export default function ProfileScreen({ navigation }) {
+  const user = useSelector((state) => state.user);
+
+  const handleOrders = () => {
+    Alert.alert("My Orders", "Here you can see your past orders.");
+  };
+
+  const handleHelp = () => {
+    Alert.alert("Help & Support", "Contact support at support@example.com");
+  };
+
+  const handleDeleteAccount = () => {
+    Alert.alert(
+      "Delete Account",
+      "Are you sure you want to delete your account? This action cannot be undone.",
+      [
+        { text: "Cancel", style: "cancel" },
+        { text: "Delete", style: "destructive", onPress: () => console.log("Account Deleted") },
+      ]
+    );
+  };
+
+  const handleLogout = () => {
+    Alert.alert(
+      "Logout",
+      "Are you sure you want to logout?",
+      [
+        { text: "Cancel", style: "cancel" },
+        { text: "Logout", style: "destructive", onPress: () => console.log("Logged Out") },
+      ]
+    );
   };
 
   return (
-    <View style={styles.container}>
-      <Image
-        source={{ uri: 'https://placekitten.com/200/200' }}
-        style={styles.avatar}
-      />
-      <Text style={styles.name}>John Doe</Text>
-      <Text style={styles.email}>johndoe@example.com</Text>
-
-      <View style={styles.buttonContainer}>
-        <Button title="Edit Profile" onPress={handleEditProfile} />
+    <ScrollView contentContainerStyle={styles.container}>
+      {/* Header */}
+      <View style={styles.headerCard}>
+        <Image source={{ uri: user.avatar }} style={styles.avatar} />
+        <Text style={styles.name}>{user.name}</Text>
       </View>
-    </View>
-  );
-};
 
-export default ProfileScreen;
+      {/* Menu Options */}
+      <View style={styles.menu}>
+        <MenuItem
+          label="Edit Profile"
+          onPress={() => navigation.navigate("EditProflie")}
+        />
+        <MenuItem label="My Orders" onPress={handleOrders} />
+        <MenuItem label="Help & Support" onPress={handleHelp} />
+        <MenuItem label="Delete Account" onPress={handleDeleteAccount} isLogout />
+        <MenuItem label="Logout" onPress={handleLogout} isLogout />
+      </View>
+    </ScrollView>
+  );
+}
+
+function MenuItem({ label, onPress, isLogout }) {
+  return (
+    <TouchableOpacity
+      style={[
+        styles.menuItem,
+        isLogout && { backgroundColor: "#fff", borderColor: "#eee" },
+      ]}
+      onPress={onPress}
+      activeOpacity={0.7}
+    >
+      <Text style={[styles.menuText, isLogout && { color: "red" }]}>
+        {label}
+      </Text>
+    </TouchableOpacity>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
+    paddingVertical: 20,
+    backgroundColor: "#f9f9f9",
+    flexGrow: 1,
+  },
+  headerCard: {
+    alignItems: "center",
+    backgroundColor: "#fff",
+    paddingVertical: 30,
+    marginHorizontal: 20,
+    borderRadius: 16,
+    elevation: 4,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    marginBottom: 25,
   },
   avatar: {
-    width: 120,
-    height: 120,
+    width: 110,
+    height: 110,
     borderRadius: 60,
-    marginBottom: 20,
+    marginBottom: 12,
   },
   name: {
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontSize: 22,
+    fontWeight: "600",
+    color: "#222",
   },
-  email: {
+  menu: {
+    marginHorizontal: 20,
+  },
+  menuItem: {
+    padding: 16,
+    backgroundColor: "#fff",
+    borderRadius: 12,
+    marginBottom: 12,
+    borderWidth: 1,
+    borderColor: "#eee",
+    elevation: 2,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+  },
+  menuText: {
     fontSize: 16,
-    color: 'gray',
-    marginBottom: 30,
-  },
-  buttonContainer: {
-    width: '60%',
+    color: "#333",
+    fontWeight: "500",
   },
 });

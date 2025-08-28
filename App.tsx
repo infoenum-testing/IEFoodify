@@ -1,26 +1,33 @@
-import React, { useEffect, useState } from 'react';
-import { useColorScheme } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { NavigationContainer } from '@react-navigation/native';
-import SplashScreen from 'react-native-splash-screen';
+import React, { useEffect, useState } from "react";
+import { useColorScheme } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { NavigationContainer } from "@react-navigation/native";
+import SplashScreen from "react-native-splash-screen";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
-import AuthStack from './src/navigation/AuthStack';
+import AuthStack from "./src/navigation/AuthStack";
+import { store, persistor } from "./src/redux/store"; // 👈 apna store import
 
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-  const [initialRoute, setInitialRoute] = useState('Welcome');
+  const isDarkMode = useColorScheme() === "dark";
+  const [initialRoute, setInitialRoute] = useState("Welcome");
 
   useEffect(() => {
     SplashScreen.hide();
-    // Add AsyncStorage logic to decide initial route
+    // TODO: Add AsyncStorage logic to decide initial route (like check if logged in)
   }, []);
 
   return (
-    <SafeAreaProvider>
-      <NavigationContainer>
-        <AuthStack />
-      </NavigationContainer>
-    </SafeAreaProvider>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <SafeAreaProvider>
+          <NavigationContainer>
+            <AuthStack />
+          </NavigationContainer>
+        </SafeAreaProvider>
+      </PersistGate>
+    </Provider>
   );
 }
 

@@ -5,7 +5,9 @@ import LoginScreen from '../screens/LoginScreen';
 import SignupScreen from '../screens/SignupScreen';
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
 import OtpScreen from '../screens/OtpScreen';
-import ResetPassword from '../screens/ResetPasswordScreen';
+import ResetPassword from '../screens/ResetPasswordScreen'; 
+import EditProflie from '../screens/EditProfileScreen'; 
+
 import HomeTab from './HomeTab';
 
 const Stack = createNativeStackNavigator();
@@ -19,6 +21,7 @@ const AuthStack = () => {
       <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} options={{ title: '' }} />
       <Stack.Screen name="OtpScreen" component={OtpScreen} options={{ title: '' }} />
       <Stack.Screen name="ResetPassword" component={ResetPassword} options={{ title: '' }} />
+       <Stack.Screen name="EditProflie" component={EditProflie} options={{ headerShown: true }} />
       <Stack.Screen name="HomeTab" component={HomeTab} options={{ headerShown: false }} />
     </Stack.Navigator>
   );

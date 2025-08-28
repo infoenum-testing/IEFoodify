@@ -11,6 +11,8 @@ import {
 import Input from '../components/Input';
 import Button from '../components/Button';
 import { validateEmail, validatePassword } from '../utils/validations';
+import { AuthService } from "../../FirebaseManager/authService";
+
 
 const SignupScreen = ({ navigation }) => {
   const [name, setName] = useState('');
@@ -20,7 +22,7 @@ const SignupScreen = ({ navigation }) => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errors, setErrors] = useState({});
 
-  const onSignup = () => {
+  const onSignup = async () => {
     let newErrors = {};
     if (!name) newErrors.name = 'Name is required';
     if (!validateEmail(email)) newErrors.email = 'Invalid email address';
@@ -31,9 +33,13 @@ const SignupScreen = ({ navigation }) => {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      // Call API here
-      console.log({ name, email, mobile, password });
-      navigation.replace('Home'); // redirect after signup
+
+      try {
+        await AuthService.signUp(email, password, name);
+        navigation.navigate('Home');
+      } catch (error) {
+        Alert.alert('Error', error.message);
+      }
     }
   };
 
@@ -66,7 +72,6 @@ const SignupScreen = ({ navigation }) => {
           error={errors.mobile}
         />
 
-        {/* 👇 Password input with eye toggle */}
         <Input
           label="Password"
           value={password}
@@ -75,7 +80,6 @@ const SignupScreen = ({ navigation }) => {
           error={errors.password}
         />
 
-        {/* 👇 Confirm Password input with eye toggle */}
         <Input
           label="Confirm Password"
           value={confirmPassword}

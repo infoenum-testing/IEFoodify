@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Platform, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Platform, TouchableOpacity, Alert } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
 import { AppleButton } from '@invertase/react-native-apple-authentication';
@@ -9,13 +9,14 @@ import { AppleButton } from '@invertase/react-native-apple-authentication';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import { validateEmail, validatePassword } from '../utils/validations';
+import { AuthService } from '../../FirebaseManager/authService';
 
 const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({ email: '', password: '' });
 
-    const handleLogin = () => {
+    const loginButtonTapped = async () => {
         let valid = true;
         let newErrors = { email: '', password: '' };
 
@@ -30,16 +31,18 @@ const LoginScreen = ({ navigation }) => {
 
         setErrors(newErrors);
         if (!valid) return;
+            try {
+        await AuthService.login(email, password);
         navigation.navigate('Home');
-
-        // 👉 API login call here
+    } catch (error) {
+        Alert.alert('Login Failed', error.message);
+    }
     };
 
     return (
         <SafeAreaProvider style={styles.container}>
             <Text style={styles.title}>Login</Text>
 
-            {/* Email Input */}
             <Input
                 label="Email"
                 value={email}
@@ -51,7 +54,6 @@ const LoginScreen = ({ navigation }) => {
                 error={errors.email}
             />
 
-            {/* Password Input */}
             <Input
                 label="Password"
                 value={password}
@@ -64,7 +66,7 @@ const LoginScreen = ({ navigation }) => {
             />
 
             {/* Login Button */}
-            <Button title="Login" onPress={handleLogin} />
+            <Button title="Login" onPress={loginButtonTapped} />
 
             {/* Forgot Password link */}
             <TouchableOpacity
@@ -74,7 +76,6 @@ const LoginScreen = ({ navigation }) => {
                 <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
             </TouchableOpacity>
 
-            {/* Sign Up */}
             <View style={styles.signUpContainer}>
                 <Text style={styles.signUpText}>
                     Don’t have an account?{' '}
@@ -86,7 +87,7 @@ const LoginScreen = ({ navigation }) => {
 
             <Text style={styles.orText}>OR</Text>
 
-            {/* Google Sign-In */}
+            // Google Sign-In 
             <GoogleSigninButton
                 style={styles.socialButton}
                 size={GoogleSigninButton.Size.Wide}
@@ -94,7 +95,7 @@ const LoginScreen = ({ navigation }) => {
                 onPress={() => { }}
             />
 
-            {/* Apple Sign-In */}
+            // Apple Sign-In 
             {Platform.OS === 'ios' && (
                 <AppleButton
                     style={styles.socialButton}

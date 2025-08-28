@@ -8,7 +8,7 @@ import {
   Platform,
   TouchableOpacity,
 } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Button from '../components/Button';
 
 const OtpScreen = ({ navigation }) => {
@@ -51,7 +51,7 @@ const OtpScreen = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaProvider style={styles.container}>
+   <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         style={{ flex: 1 }}
@@ -88,7 +88,7 @@ const OtpScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>
-    </SafeAreaProvider>
+    </SafeAreaView>
   );
 };
 
@@ -101,15 +101,15 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    justifyContent: 'center',
+    //justifyContent: 'center',
     padding: 24,
   },
   title: {
-    fontSize: 28,
+    fontSize: 32,
     fontWeight: '700',
     alignSelf: 'center',
     marginBottom: 8,
-    color: '#222',
+    color: '#2382AA',
   },
   subtitle: {
     fontSize: 15,

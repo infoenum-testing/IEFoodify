@@ -8,7 +8,7 @@ import {
   Alert,
   ScrollView,
 } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Input from '../components/Input';
 import Button from '../components/Button';
@@ -52,48 +52,46 @@ const ResetPasswordScreen = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaProvider style={styles.container}>
-      <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-        style={{ flex: 1 }}
+    <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>      <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      style={{ flex: 1 }}
+    >
+      <ScrollView
+        contentContainerStyle={styles.content}
+        keyboardShouldPersistTaps="handled"
+        showsVerticalScrollIndicator={false}
       >
-        <ScrollView
-          contentContainerStyle={styles.content}
-          keyboardShouldPersistTaps="handled"
-          showsVerticalScrollIndicator={false}
-        >
-          <Text style={styles.title}>Reset Password</Text>
-          <Text style={styles.subtitle}>Enter your new password below</Text>
+        <Text style={styles.title}>Reset Password</Text>
+        <Text style={styles.subtitle}>Enter your new password below</Text>
 
-          {/* 🔒 New Password (eye toggle via Input's isPassword) */}
-          <Input
-            label="New Password"
-            value={password}
-            onChangeText={(text) => {
-              setPassword(text);
-              if (passwordError) setPasswordError('');
-            }}
-            isPassword
-            error={passwordError}
-          />
+        {/* 🔒 New Password (eye toggle via Input's isPassword) */}
+        <Input
+          label="New Password"
+          value={password}
+          onChangeText={(text) => {
+            setPassword(text);
+            if (passwordError) setPasswordError('');
+          }}
+          isPassword
+          error={passwordError}
+        />
 
-          {/* 🔒 Confirm Password (eye toggle via Input's isPassword) */}
-          <Input
-            label="Confirm Password"
-            value={confirmPassword}
-            onChangeText={(text) => {
-              setConfirmPassword(text);
-              if (confirmError) setConfirmError('');
-            }}
-            isPassword
-            error={confirmError}
-          />
+        {/* 🔒 Confirm Password (eye toggle via Input's isPassword) */}
+        <Input
+          label="Confirm Password"
+          value={confirmPassword}
+          onChangeText={(text) => {
+            setConfirmPassword(text);
+            if (confirmError) setConfirmError('');
+          }}
+          isPassword
+          error={confirmError}
+        />
 
-          <Button title="Reset Password" onPress={handleReset} />
-        </ScrollView>
-      </KeyboardAvoidingView>
-    </SafeAreaProvider>
-  );
+        <Button title="Reset Password" onPress={handleReset} />
+      </ScrollView>
+    </KeyboardAvoidingView>
+    </SafeAreaView>);
 };
 
 export default ResetPasswordScreen;
@@ -105,15 +103,14 @@ const styles = StyleSheet.create({
   },
   content: {
     flexGrow: 1,
-    justifyContent: 'center',
-    padding: 24,
+    padding: 20,
   },
   title: {
-    fontSize: 28,
+    fontSize: 32,
     fontWeight: '700',
     alignSelf: 'center',
     marginBottom: 8,
-    color: '#222',
+    color: '#2382AA',
   },
   subtitle: {
     fontSize: 15,

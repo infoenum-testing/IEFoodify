@@ -2435,7 +2435,99 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - RNScreens (4.15.2):
+  - RNReanimated (4.0.2):
+    - boost
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-hermes
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - RNReanimated/reanimated (= 4.0.2)
+    - RNWorklets
+    - SocketRocket
+    - Yoga
+  - RNReanimated/reanimated (4.0.2):
+    - boost
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-hermes
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - RNReanimated/reanimated/apple (= 4.0.2)
+    - RNWorklets
+    - SocketRocket
+    - Yoga
+  - RNReanimated/reanimated/apple (4.0.2):
+    - boost
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-hermes
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - RNWorklets
+    - SocketRocket
+    - Yoga
+  - RNScreens (4.15.3):
     - boost
     - DoubleConversion
     - fast_float
@@ -2462,10 +2554,10 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - RNScreens/common (= 4.15.2)
+    - RNScreens/common (= 4.15.3)
     - SocketRocket
     - Yoga
-  - RNScreens/common (4.15.2):
+  - RNScreens/common (4.15.3):
     - boost
     - DoubleConversion
     - fast_float
@@ -2486,6 +2578,123 @@ PODS:
     - React-NativeModulesApple
     - React-RCTFabric
     - React-RCTImage
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - SocketRocket
+    - Yoga
+  - RNVectorIcons (10.3.0):
+    - boost
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - SocketRocket
+    - Yoga
+  - RNWorklets (0.4.2):
+    - boost
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-hermes
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - RNWorklets/worklets (= 0.4.2)
+    - SocketRocket
+    - Yoga
+  - RNWorklets/worklets (0.4.2):
+    - boost
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-hermes
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - RNWorklets/worklets/apple (= 0.4.2)
+    - SocketRocket
+    - Yoga
+  - RNWorklets/worklets/apple (0.4.2):
+    - boost
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-hermes
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
     - React-renderercss
     - React-rendererdebug
     - React-utils
@@ -2574,9 +2783,11 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNAppleAuthentication (from `../node_modules/@invertase/react-native-apple-authentication`)"
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
-  - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
   - "RNGoogleSignin (from `../node_modules/@react-native-google-signin/google-signin`)"
+  - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
+  - RNWorklets (from `../node_modules/react-native-worklets`)
   - SocketRocket (~> 0.7.1)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -2749,12 +2960,16 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@invertase/react-native-apple-authentication"
   RNFBApp:
     :path: "../node_modules/@react-native-firebase/app"
-  RNFBAuth:
-    :path: "../node_modules/@react-native-firebase/auth"
   RNGoogleSignin:
     :path: "../node_modules/@react-native-google-signin/google-signin"
+  RNReanimated:
+    :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
+  RNWorklets:
+    :path: "../node_modules/react-native-worklets"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -2820,37 +3035,35 @@ SPEC CHECKSUMS:
   React-perflogger: a1edb025fd5d44f61bf09307e248f7608d7b2dcf
   React-performancetimeline: 26d94630c92404d23c0effdd64fc6dcc2ac6496a
   React-RCTActionSheet: 550c9c6c2e7dcd85a51954dc08e2f3837a148e7c
-  React-RCTAnimation: 19d4bb6d2190983d1354b096b7b65dbd591924da
-  React-RCTAppDelegate: 6c71d16eef920831a312ff363355fc3b99c02a98
-  React-RCTBlob: b81a0cffe1a083bcf9d8aa9f27f4d37864579e90
-  React-RCTFabric: d80ef2774f117b5cb84b9171cf15fa5553196049
-  React-RCTFBReactNativeSpec: 638cf5988fd81d0b6d08b4168a4cc91cafa3eb98
-  React-RCTImage: 607e5e373fb56d72417464bd82e8046af81ab502
-  React-RCTLinking: 301434c7bf1100458be5a3866326ba33491e3687
-  React-RCTNetwork: a118a47bd123ac96c9877e04f5731a1d6545aba5
-  React-RCTRuntime: 043a23ce503f23adba6ffd167ba2c6016b09b6ce
-  React-RCTSettings: 5a5aa2cf9ac40f7a8897cc0f9d945ac803886604
-  React-RCTText: e6e00bee9847a8af1218079b73c8bfed16c75b8d
-  React-RCTVibration: 5a05fa0ef05ee73d074a3314e57586afc969f1ba
-  React-rendererconsistency: 6a4cfe3dd86360112e321813960c257b814e580b
-  React-renderercss: e4e5734a67bbc6641ea482b93610e5743b586cf3
-  React-rendererdebug: bab0a2a7936f27230676962deaf41744b368eb3c
-  React-RuntimeApple: bda6ffccd5910dfdcfa3e8d8bc95acae35eba36c
-  React-RuntimeCore: b72a7e0bf2aa81e95f882851da658eee40218f82
-  React-runtimeexecutor: eb62f4b621ac54ef1a12a9d67f87799dc404254f
-  React-RuntimeHermes: 0769d27f1e8f9c8657b563bbf73ec2bcd1866e99
-  React-runtimescheduler: 67353cec9918ab05d6cdca74b082ca984207f63f
-  React-timing: 0b2e20e7842a85e33d2456986137a99b95a31421
-  React-utils: 6cf54d288bcbd10d5cbf1c09eae7ff024c508f77
-  ReactAppDependencyProvider: c91900fa724baee992f01c05eeb4c9e01a807f78
-  ReactCodegen: 8f2a63b11f0625a7b36d4c8c588d7c89a3086cda
-  ReactCommon: 5ee89f5eec706805c432ed5b598adcd4e5aaa088
-  RecaptchaInterop: 11e0b637842dfb48308d242afc3f448062325aba
-  RNAppleAuthentication: c3dddf5918126c9aae85dc2e2ce9fb87835e9e04
-  RNFBApp: 3155b54dc88e7bf8d7aad86c014bed54747f4e0f
-  RNFBAuth: 955c9df234ad94774b03c37d2911ec35620b8c24
-  RNGoogleSignin: 4c2c293ff588321c819c3cdff3fba61de3723f99
-  RNScreens: baa2020baf5417611564f6139eeb5e5c16e708ec
+  React-RCTAnimation: 0008bfe273566acd3128da13598073383325ac7a
+  React-RCTAppDelegate: 8b9452baef5548856a22f4710d4135cf68746cf5
+  React-RCTBlob: 60006ab743e5fd807aaf536092f5ce86e87df526
+  React-RCTFabric: 8d5d1006b3812c35fd0f37c117ff7bcf6449e20d
+  React-RCTFBReactNativeSpec: 3cb4265fa9a4e4f8250ae89feb345edc542731da
+  React-RCTImage: f40a2ee0f79c1666e8b81da4ea2d9d1182c94962
+  React-RCTLinking: cfe6995bdd8d08d0bb0df12771f4d28fd5fd54ff
+  React-RCTNetwork: 565c0cd46313f2cad0e4db70a44958b2842c372b
+  React-RCTRuntime: 971a71a42d8979475a380e5179083302e5506cdd
+  React-RCTSettings: afcec6060d916e9c0410004ad8419d45f9dbcd36
+  React-RCTText: 952f2a1b618d3f3872e7e5a82aefc5e5082c59aa
+  React-RCTVibration: 2a7e7497ffefa135c7f0fee8ee10e3505ab5cc61
+  React-rendererconsistency: c2cb23365f4a7b511893748fe8cad1830bbae637
+  React-renderercss: 621b2b85af14694e93c2bcd63986fb57bcceab2e
+  React-rendererdebug: 4ba0769131e20347b900757fcac3c7919b27080c
+  React-RuntimeApple: c1a211351c14d35805d45a94094cfb3e5649552c
+  React-RuntimeCore: b7c7d8dffa3728a9e9616e0e8b5b6b41037ebcca
+  React-runtimeexecutor: e931e48afc888fe459f6ffb481971e23bb34f7ee
+  React-RuntimeHermes: 5763230801ee57d9f414818f48e44b874f3ce1be
+  React-runtimescheduler: b2e99f9702705fc8c11cf3c51f9911f478ee2210
+  React-timing: 25e8229ad1cf6874e9f0711515213cb2bc322215
+  React-utils: 7ea6e4d300c43a763e4e08091413aec962588f93
+  ReactAppDependencyProvider: 562d731311d0524a577cf8a01faa97874bacbdfe
+  ReactCodegen: a5d5626f71299d374b87e9a7dc92f968a963b4ef
+  ReactCommon: c235ebd26d63fde9a2dfa72cee9f8294b910fee1
+  RNAppleAuthentication: b2d8b5ccba86b5b1e55a1a2e858f7ac6d8a21816
+  RNFBApp: 88e0ffca27b3de42c333860b6c5fc7cf6949d63d
+  RNGoogleSignin: 87502f82bf180fefb16e160149bfe5b380c558e6
+  RNScreens: e20bc1428c0d29db77815eae36f5d3a373d46248
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: be78ddad0c56d06a5e41eaef4bfbbd49b86a4d07
 
